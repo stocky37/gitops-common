@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hook
+  annotations:
+    argocd.argoproj.io/hook: <todo>
+spec:
+  template:
+    spec:
+      containers:
+        - name: script
+          image: quay.io/tstockwell/ubi8-gettext
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: hook-config
+          command:
+            - /bin/bash
+            - /scripts/hook.sh
+          volumeMounts:
+            - name: files
+              mountPath: /scripts
+      restartPolicy: OnFailure
+      volumes:
+        - name: files
+          configMap:
+            name: hook-files
+
+
