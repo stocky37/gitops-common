@@ -8,3 +8,7 @@ resources:
 patches:
   - path: service-vault.patch.yml
   - path: service-vault-internal.patch.yml
+  - path: remove-helm-hooks.patch.yml
+    target:
+      annotationSelector: 'helm.sh/hook'
+

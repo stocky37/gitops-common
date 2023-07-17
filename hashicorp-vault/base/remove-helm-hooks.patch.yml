@@ -1,0 +1,4 @@
+$patch: delete
+kind: Pod
+metadata:
+  name: name
