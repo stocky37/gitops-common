@@ -3,12 +3,12 @@ kind: Kustomization
 namespace: vault
 
 resources:
+  - namespace.yml
   - helm
 
 patches:
-  - path: service-vault.patch.yml
-  - path: service-vault-internal.patch.yml
-  - path: remove-helm-hooks.patch.yml
+  - path: patches/service-vault.patch.yml
+  - path: patches/service-vault-internal.patch.yml
+  - path: patches/remove-helm-hooks.patch.yml
     target:
       annotationSelector: 'helm.sh/hook'
-
