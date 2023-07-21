@@ -2,7 +2,6 @@ apiVersion: console.openshift.io/v1
 kind: ConsoleLink
 metadata:
   name: vault-link
-  namespace: default
 spec:
   applicationMenu:
     section: HashiCorp Vault

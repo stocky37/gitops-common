@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- clusterrolebinding-vault-server-binding.yml
+- configmap-vault-config.yml
+- pod-vault-server-test.yml
+- route-vault.yml
+- service-vault-internal.yml
+- service-vault-ui.yml
+- service-vault.yml
+- serviceaccount-vault.yml
+- statefulset-vault.yml
